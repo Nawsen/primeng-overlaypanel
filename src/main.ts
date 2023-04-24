@@ -11,10 +11,12 @@ import { ButtonModule } from 'primeng/button';
   standalone: true,
   imports: [CommonModule, OverlayPanelModule, ButtonModule],
   template: `
-    <button pButton pRipple label="Submit" class="p-button-success" (click)="toggle($event)"></button>
+    <button pButton pRipple label="toggle" class="p-button-success" (click)="toggle($event)"></button>
     <p-overlayPanel #overlay [dismissable]="false" [showCloseIcon]="false" appendTo="body">
       <ng-template pTemplate="content">
         <h4>Custom Content</h4>
+        <button pButton label="custom toggle button" (click)="toggle($event)"></button>
+        <button pButton label="custom close button" (click)="close($event)"></button>
       </ng-template>
     </p-overlayPanel>
   `,
@@ -24,6 +26,10 @@ export class App {
 
   toggle(event: any) {
     this.overlay.toggle(event);
+  }
+
+  close(event: any) {
+    this.overlay.hide();
   }
 }
 
