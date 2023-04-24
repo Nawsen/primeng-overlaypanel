@@ -15,8 +15,8 @@ import { ButtonModule } from 'primeng/button';
     <p-overlayPanel #overlay [dismissable]="false" [showCloseIcon]="false" appendTo="body">
       <ng-template pTemplate="content">
         <h4>Custom Content</h4>
-        <button pButton label="custom toggle button" (click)="toggle($event)"></button>
-        <button pButton label="custom close button" (click)="close($event)"></button>
+        <div><button pButton label="custom toggle button (gives error)" class=p-button-danger (click)="toggle($event)"></button></div>
+        <div><button pButton label="custom close button" (click)="close($event)"></button></div>
       </ng-template>
     </p-overlayPanel>
   `,
